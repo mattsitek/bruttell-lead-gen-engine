@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bruttell Roofing — Strategic Website Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a2e4a; line-height: 1.6; background: #fff; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── SECTION 1: PITCH HEADER ── */
+.pitch-header {
+  background: linear-gradient(135deg, #0d1f35 0%, #1a2e4a 50%, #1e3a5f 100%);
+  padding: 80px 24px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.pitch-header::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 42px);
+  pointer-events: none;
+}
+.pitch-header h1 { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; font-weight: 700; margin-bottom: 16px; line-height: 1.25; }
+.pitch-header h1 span { color: #c8a84b; }
+.pitch-header .subtitle { font-size: clamp(0.95rem, 1.8vw, 1.15rem); color: rgba(255,255,255,0.75); max-width: 640px; margin: 0 auto 24px; font-weight: 400; }
+.pitch-header .confidential { font-style: italic; font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-top: 8px; }
+.pitch-header .divider-line { width: 60px; height: 3px; background: #c8a84b; margin: 28px auto 0; border-radius: 2px; }
+
+/* ── SECTION 2: REPORT SUMMARY ── */
+.report-summary { padding: 100px 24px; background: #fff; }
+.report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1200px; margin: 0 auto; }
+.report-left h2 { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: #1a2e4a; line-height: 1.2; margin-bottom: 24px; }
+.report-left p { font-size: 1.02rem; color: #4a5568; line-height: 1.8; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stat-card { background: #1a2e4a; border-radius: 12px; padding: 28px 24px; border-left: 4px solid #c8a84b; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,46,74,0.2); }
+.stat-card .number { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 2.4rem; font-weight: 800; color: #c8a84b; line-height: 1; margin-bottom: 8px; }
+.stat-card .label { font-size: 0.82rem; font-weight: 600; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.stat-card .desc { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+/* ── SECTION 3: PILLAR / CLUSTER ── */
+.content-arch { padding: 100px 24px; background: #f5f7fa; }
+.content-arch .section-header { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+.section-header h2 { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); color: #1a2e4a; font-weight: 700; margin-bottom: 12px; }
+.section-header p { color: #4a5568; font-size: 1rem; }
+.hub-spoke { max-width: 800px; margin: 0 auto 60px; }
+.hub-center { width: 200px; height: 200px; background: linear-gradient(135deg, #1a2e4a, #243d5e); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; margin: 0 auto; position: relative; z-index: 2; box-shadow: 0 8px 40px rgba(26,46,74,0.3); border: 3px solid #c8a84b; }
+.hub-center span { color: #fff; font-weight: 700; font-size: 0.95rem; line-height: 1.4; padding: 20px; }
+.hub-center span em { display: block; font-style: normal; color: #c8a84b; font-size: 0.82rem; margin-top: 4px; font-weight: 500; }
+.pillar-ring { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: -40px; position: relative; z-index: 1; padding-top: 60px; }
+.pillar-node { background: #fff; border: 2px solid #2563a8; border-radius: 12px; padding: 20px 16px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+.pillar-node:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(37,99,168,0.15); border-color: #c8a84b; }
+.pillar-node .icon { font-size: 1.6rem; margin-bottom: 8px; }
+.pillar-node .name { font-weight: 600; font-size: 0.88rem; color: #1a2e4a; }
+.pillar-node::before { content: ''; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); width: 2px; height: 22px; background: linear-gradient(to bottom, #2563a8, transparent); }
+.geo-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 24px; }
+.geo-badge { background: #fff; border: 1px solid #d1d5db; border-radius: 100px; padding: 8px 18px; font-size: 0.82rem; font-weight: 500; color: #1a2e4a; transition: all 0.2s ease; }
+.geo-badge:hover { background: #1a2e4a; color: #fff; border-color: #1a2e4a; }
+.arch-caption { text-align: center; font-size: 0.95rem; color: #4a5568; font-weight: 500; max-width: 600px; margin: 0 auto; }
+.arch-caption strong { color: #1a2e4a; }
+
+/* ════════════════════════════════════════════════════
+   STRATEGY BOARD — SHARED STYLES
+   ════════════════════════════════════════════════════ */
+.strategy-section { padding: 100px 24px; }
+.strategy-section.board-a { background: #fff; }
+.strategy-section.board-b { background: #f5f7fa; }
+
+.board-header {
+  max-width: 1100px; margin: 0 auto 48px;
+  text-align: center;
+}
+.board-label {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 3px;
+  padding: 6px 20px; border-radius: 100px;
+  margin-bottom: 16px;
+}
+.board-a .board-label { background: #d94f2b; color: #fff; }
+.board-b .board-label { background: #c8a84b; color: #1a2e4a; }
+.board-header h2 {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: #1a2e4a; font-weight: 700;
+  margin-bottom: 8px;
+}
+.board-header .board-sub {
+  font-size: 1rem; color: #64748b; max-width: 600px; margin: 0 auto;
+}
+.board-header .inspiration {
+  font-size: 0.78rem; color: #94a3b8; margin-top: 8px; font-style: italic;
+}
+
+/* ── WIREFRAME ZONE ── */
+.wireframe-wrap {
+  max-width: 1100px; margin: 0 auto 48px;
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(26,46,74,0.08);
+}
+
+/* Wireframe zones — colored blocks representing page sections */
+.wf-zone {
+  position: relative;
+  padding: 20px 24px;
+  border-bottom: 2px dashed #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 60px;
+}
+.wf-zone:last-child { border-bottom: none; }
+
+.wf-zone-bar {
+  width: 6px;
+  align-self: stretch;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.wf-zone-content {
+  flex: 1;
+  min-width: 0;
+}
+.wf-zone-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+.wf-zone-layout {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Annotation badge */
+.wf-annotation {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 800; color: #fff;
+}
+.board-a .wf-annotation { background: #d94f2b; }
+.board-b .wf-annotation { background: #c8a84b; color: #1a2e4a; }
+
+/* Zone-specific wireframe mini-layouts */
+.wf-mini {
+  display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;
+}
+.wf-block {
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.wf-block.navy { background: #1a2e4a; color: #fff; }
+.wf-block.gold { background: #c8a84b; color: #1a2e4a; }
+.wf-block.red { background: #d94f2b; color: #fff; }
+.wf-block.light { background: #f5f7fa; color: #4a5568; border: 1px solid #e2e8f0; }
+.wf-block.blue { background: #2563a8; color: #fff; }
+.wf-block.outline { background: transparent; border: 2px solid #1a2e4a; color: #1a2e4a; }
+
+/* Hero zone special layout */
+.wf-hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.wf-hero-left, .wf-hero-right {
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.72rem;
+}
+.wf-hero-left {
+  background: linear-gradient(135deg, #1a2e4a, #2563a8);
+  color: #fff;
+}
+.wf-hero-right {
+  border: 2px solid #1a2e4a;
+  background: #f8fafc;
+  color: #1a2e4a;
+}
+.wf-hero-full {
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: #fff;
+}
+.wf-hero-full.warm-bg {
+  background: linear-gradient(135deg, #1a2e4a 0%, #2563a8 50%, #1a2e4a 100%);
+}
+.wf-hero-full.geo-bg {
+  background:
+    repeating-linear-gradient(-45deg, transparent, transparent 14px, rgba(255,255,255,0.03) 14px, rgba(255,255,255,0.03) 16px),
+    linear-gradient(135deg, #0d1f35 0%, #1a2e4a 100%);
+}
+.wf-mini-headline {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.wf-mini-sub { opacity: 0.7; font-size: 0.68rem; margin-bottom: 10px; }
+.wf-mini-ctas { display: flex; gap: 8px; flex-wrap: wrap; }
+.wf-mini-btn {
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.wf-mini-btn.gold-btn { background: #c8a84b; color: #1a2e4a; }
+.wf-mini-btn.red-btn { background: #d94f2b; color: #fff; }
+.wf-mini-btn.outline-btn { border: 1px solid rgba(255,255,255,0.4); color: #fff; background: transparent; }
+
+/* Form wireframe */
+.wf-form-mock {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;
+}
+.wf-form-field {
+  background: #fff; border: 1px solid #d1d5db; border-radius: 3px;
+  padding: 5px 8px; font-size: 0.58rem; color: #94a3b8;
+}
+.wf-form-field.span2 { grid-column: 1 / -1; }
+.wf-form-submit {
+  grid-column: 1 / -1;
+  background: #d94f2b; color: #fff; border: none; border-radius: 3px;
+  padding: 7px; font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+  text-align: center; letter-spacing: 0.5px; cursor: default;
+}
+
+/* ZIP form wireframe */
+.wf-zip-bar {
+  display: flex; gap: 0; margin-top: 10px; max-width: 280px;
+}
+.wf-zip-input {
+  flex: 1; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+  border-right: none; border-radius: 4px 0 0 4px; padding: 8px 10px;
+  font-size: 0.62rem; color: rgba(255,255,255,0.5);
+}
+.wf-zip-btn {
+  background: #d94f2b; color: #fff; border: none; border-radius: 0 4px 4px 0;
+  padding: 8px 12px; font-size: 0.6rem; font-weight: 700;
+  white-space: nowrap; cursor: default;
+}
+
+/* Trust strip wireframe */
+.wf-trust-row {
+  display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap;
+}
+.wf-trust-badge {
+  display: flex; align-items: center; gap: 4px;
+  background: #f0f2f5; border-radius: 100px; padding: 4px 12px;
+  font-size: 0.62rem; font-weight: 600; color: #1a2e4a;
+}
+
+/* Service cards wireframe */
+.wf-svc-row {
+  display: grid; gap: 8px; margin-top: 8px;
+}
+.wf-svc-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.wf-svc-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.wf-svc-card {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+  padding: 12px 10px; text-align: center;
+}
+.wf-svc-card .svc-emoji { font-size: 1.2rem; margin-bottom: 4px; }
+.wf-svc-card .svc-name { font-size: 0.68rem; font-weight: 700; color: #1a2e4a; }
+.wf-svc-card .svc-desc { font-size: 0.58rem; color: #94a3b8; margin-top: 2px; }
+
+/* Board B wireframe: service visual grid */
+.wf-svc-visual-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* ── ANNOTATION CARDS (the insight layer) ── */
+.annotations-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.anno-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  gap: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.board-b .anno-card { background: #fff; }
+.anno-card:hover {
+  box-shadow: 0 8px 24px rgba(26,46,74,0.08);
+  transform: translateY(-2px);
+}
+.anno-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem; font-weight: 800; flex-shrink: 0;
+  color: #fff;
+}
+.board-a .anno-num { background: #d94f2b; }
+.board-b .anno-num { background: #c8a84b; color: #1a2e4a; }
+.anno-body h4 {
+  font-size: 0.88rem; font-weight: 700; color: #1a2e4a; margin-bottom: 4px;
+}
+.anno-body p {
+  font-size: 0.82rem; color: #64748b; line-height: 1.6;
+}
+.anno-body .bruttell-specific {
+  margin-top: 8px; padding-top: 8px;
+  border-top: 1px solid #f0f2f5;
+  font-size: 0.78rem; color: #1a2e4a; font-weight: 500;
+}
+.anno-body .bruttell-specific strong { color: #d94f2b; }
+.board-b .anno-body .bruttell-specific strong { color: #c8a84b; }
+
+/* Bottom insight callout */
+.board-insight {
+  max-width: 1100px; margin: 40px auto 0;
+  background: #1a2e4a; border-radius: 12px;
+  padding: 28px 32px;
+  display: flex; align-items: center; gap: 20px;
+}
+.board-insight-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: #c8a84b;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.board-insight p {
+  font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.6;
+}
+.board-insight strong { color: #c8a84b; }
+
+/* ── SECTION 6: WHAT YOU GET ── */
+.what-you-get {
+  padding: 100px 24px;
+  background: linear-gradient(135deg, #0d1f35 0%, #1a2e4a 50%, #1e3a5f 100%);
+  position: relative; overflow: hidden;
+}
+.what-you-get::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.01) 60px, rgba(255,255,255,0.01) 62px);
+  pointer-events: none;
+}
+.what-you-get .section-header h2 { color: #fff; }
+.checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 60px; max-width: 960px; margin: 0 auto 50px; position: relative; z-index: 1; }
+.check-item { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; }
+.check-item .check { color: #c8a84b; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.check-item span { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
+.gold-quote { text-align: center; font-family: 'Inter', 'Segoe UI', sans-serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.5rem); color: #c8a84b; max-width: 700px; margin: 0 auto; line-height: 1.5; position: relative; z-index: 1; }
+
+/* ── SECTION 7: LEADS QUESTION ── */
+.leads-question {
+  padding: 100px 24px;
+  background: #fff;
+}
+.lq-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+.lq-icon { font-size: 2.4rem; margin-bottom: 16px; }
+.lq-inner h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.lq-inner h3 {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #d94f2b;
+  margin-bottom: 20px;
+}
+.lq-body {
+  font-size: 1.02rem;
+  color: #4a5568;
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.lq-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.lq-stat {
+  background: #1a2e4a;
+  border-radius: 12px;
+  padding: 28px 20px;
+  border-top: 4px solid #d94f2b;
+}
+.lq-stat-num {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #d94f2b;
+  margin-bottom: 8px;
+}
+.lq-stat-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.lq-questions {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: left;
+  margin-bottom: 32px;
+  border: 1px solid #e2e8f0;
+}
+.lq-q-header {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a2e4a;
+  margin-bottom: 16px;
+}
+.lq-q-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 0.92rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+.lq-bullet {
+  color: #d94f2b;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.lq-close {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: #1a2e4a;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ── FOOTER ── */
+.site-footer { background: #0d1f35; padding: 32px 24px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; }
+.footer-center { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-align: center; }
+.footer-phone { font-size: 0.88rem; color: #c8a84b; font-weight: 600; }
+
+/* ── RESPONSIVE: TABLET ── */
+@media (max-width: 768px) {
+  /* Global spacing */
+  .container { padding: 0 16px; }
+  .pitch-header { padding: 48px 16px; }
+  .report-summary { padding: 60px 16px; }
+  .content-arch { padding: 60px 16px; }
+  .strategy-section { padding: 60px 16px; }
+  .what-you-get { padding: 60px 16px; }
+  .leads-question { padding: 60px 16px; }
+
+  /* Header */
+  .pitch-header h1 { font-size: 1.5rem; }
+  .pitch-header h1 br { display: none; }
+  .pitch-header .subtitle { font-size: 0.88rem; margin-bottom: 16px; }
+
+  /* Report */
+  .report-grid { grid-template-columns: 1fr; gap: 32px; }
+  .report-left h2 { font-size: 1.4rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-card { padding: 20px 16px; }
+  .stat-card .number { font-size: 1.8rem; }
+
+  /* Hub-spoke */
+  .pillar-ring { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hub-center { width: 140px; height: 140px; }
+  .hub-center span { font-size: 0.78rem; padding: 12px; }
+  .geo-strip { gap: 6px; }
+  .geo-badge { padding: 6px 12px; font-size: 0.72rem; }
+
+  /* Strategy boards */
+  .board-header h2 { font-size: 1.4rem; }
+  .board-header .board-sub { font-size: 0.88rem; }
+  .wireframe-wrap { border-radius: 12px; }
+  .wf-zone { padding: 16px; gap: 12px; flex-wrap: wrap; }
+  .wf-zone-bar { width: 100%; height: 4px; align-self: auto; border-radius: 2px; }
+  .wf-annotation { width: 28px; height: 28px; font-size: 0.68rem; }
+  .wf-hero-split { grid-template-columns: 1fr; gap: 12px; }
+  .wf-mini-headline { font-size: 0.92rem; }
+  .wf-form-mock { gap: 4px; }
+  .wf-svc-row.cols-4 { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .wf-svc-row.cols-3 { grid-template-columns: 1fr; }
+  .wf-trust-row { gap: 6px; }
+  .wf-trust-badge { font-size: 0.58rem; padding: 3px 8px; }
+  .wf-mini { gap: 4px; }
+  .wf-block { padding: 6px 10px; font-size: 0.6rem; }
+
+  /* Board B service visual */
+  .wf-svc-visual-grid { grid-template-columns: 1fr; }
+
+  /* Annotation cards */
+  .annotations-grid { grid-template-columns: 1fr; gap: 12px; }
+  .anno-card { padding: 18px; gap: 12px; }
+  .anno-num { width: 30px; height: 30px; font-size: 0.75rem; }
+  .anno-body h4 { font-size: 0.82rem; }
+  .anno-body p { font-size: 0.78rem; }
+
+  /* Board insight */
+  .board-insight { flex-direction: column; text-align: center; padding: 24px 20px; gap: 12px; border-radius: 10px; }
+  .board-insight p { font-size: 0.82rem; }
+
+  /* Leads section */
+  .lq-inner h3 { font-size: 1.5rem; }
+  .lq-body { font-size: 0.88rem; margin-bottom: 28px; }
+  .lq-stats-row { grid-template-columns: 1fr; gap: 12px; }
+  .lq-stat { padding: 20px 16px; }
+  .lq-stat-num { font-size: 1.2rem; }
+  .lq-questions { padding: 20px; }
+  .lq-q-item { font-size: 0.82rem; gap: 8px; }
+  .lq-close { font-size: 0.92rem; }
+
+  /* What you get */
+  .checklist-grid { grid-template-columns: 1fr; gap: 10px; }
+  .check-item span { font-size: 0.85rem; }
+  .gold-quote { font-size: 1rem; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
+}
+
+/* ── RESPONSIVE: PHONE ── */
+@media (max-width: 480px) {
+  .pitch-header { padding: 36px 14px; }
+  .pitch-header h1 { font-size: 1.2rem; line-height: 1.3; }
+  .pitch-header .subtitle { font-size: 0.82rem; }
+  .report-left h2 { font-size: 1.15rem; }
+  .report-left p { font-size: 0.88rem; }
+  .stats-grid { grid-template-columns: 1fr; gap: 10px; }
+  .stat-card .number { font-size: 1.5rem; }
+  .pillar-ring { grid-template-columns: 1fr; gap: 10px; }
+  .pillar-node { padding: 14px 12px; }
+  .section-header h2 { font-size: 1.15rem; }
+  .board-header h2 { font-size: 1.15rem; }
+  .board-header .board-sub { font-size: 0.78rem; }
+  .board-header .inspiration { font-size: 0.68rem; }
+  .wf-svc-row.cols-4 { grid-template-columns: 1fr; }
+  .wf-hero-full { padding: 14px; }
+  .wf-mini-headline { font-size: 0.82rem; }
+  .wf-zip-bar { flex-direction: column; max-width: 100%; }
+  .wf-zip-input { border-right: 1px solid rgba(255,255,255,0.3); border-radius: 4px 4px 0 0; border-bottom: none; }
+  .wf-zip-btn { border-radius: 0 0 4px 4px; text-align: center; }
+  .anno-card { padding: 14px; }
+  .anno-body .bruttell-specific { font-size: 0.72rem; }
+  .board-insight p { font-size: 0.78rem; }
+  .lq-inner h2 { font-size: 0.88rem; }
+  .lq-inner h3 { font-size: 1.2rem; }
+  .lq-body { font-size: 0.82rem; }
+  .lq-stat-num { font-size: 1.05rem; }
+  .lq-stat-label { font-size: 0.72rem; }
+  .lq-q-header { font-size: 0.78rem; }
+  .lq-q-item { font-size: 0.75rem; }
+  .lq-close { font-size: 0.85rem; }
+  .check-item span { font-size: 0.78rem; }
+  .gold-quote { font-size: 0.92rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1 — THE PITCH HEADER
+     ═══════════════════════════════════════════ -->
+<section class="pitch-header">
+  <div class="container">
+    <h1>Matt — This Is How Bruttell Becomes<br><span>Metro Detroit's Leads Engine</span></h1>
+    <p class="subtitle">You've spent 45 years building a reputation that fills jobs through referrals. This strategy builds the digital foundation that turns search traffic into a second pipeline — one that runs 24/7, compounds over time, and makes Bruttell the name AI recommends when homeowners ask "who's the best roofer near me."</p>
+    <div class="divider-line"></div>
+    <p class="subtitle" style="margin-top: 20px; font-size: clamp(0.85rem, 1.5vw, 1rem); max-width: 560px;">The referrals prove you're trusted. This proves it to everyone who hasn't met you yet.<br>Scroll to see the blueprint.</p>
+    <p class="confidential">Prepared exclusively for Bruttell Roofing &amp; Sheet Metal by <span style="font-family:'Pacifico', cursive;">Rivet</span> Automation Services.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2 — THE REPORT SUMMARY
+     ═══════════════════════════════════════════ -->
+<section class="report-summary">
+  <div class="report-grid container">
+    <div class="report-left fade-in">
+      <h2>The first roofer to build this in Metro Detroit wins the next decade of search.</h2>
+      <p>Over 65% of Google searches now end without a click. AI tools like ChatGPT and Perplexity now answer "best roofer in Oak Park" — and they cite websites with structured content 3.2x more often than sites without it. Bruttell has 45+ years of credibility, a National Contractor of the Year award, and Duro-Last Elite certification. None of that shows up online. This strategy changes that.</p>
+    </div>
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="number">3.2x</div>
+        <div class="label">More AI Citations</div>
+        <div class="desc">For sites with schema markup vs. those without</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">65%</div>
+        <div class="label">Zero-Click Searches</div>
+        <div class="desc">Of Google searches end without a click — AI answers instead</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">86</div>
+        <div class="label">Content Pieces</div>
+        <div class="desc">In the full pillar/cluster strategy for Metro Detroit</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">4.4x</div>
+        <div class="label">Higher Conversion</div>
+        <div class="desc">From AI search visitors vs. traditional organic traffic</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3 — PILLAR / CLUSTER STRATEGY
+     ═══════════════════════════════════════════ -->
+<section class="content-arch">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>The Content Architecture That Dominates<br>Oak Park + 11 Surrounding Communities</h2>
+    </div>
+    <div class="hub-spoke fade-in">
+      <div class="hub-center"><span>Bruttell Roofing<em>Oak Park, MI</em></span></div>
+      <div class="pillar-ring">
+        <div class="pillar-node"><div class="icon">🏠</div><div class="name">Roof Replacement Guide</div></div>
+        <div class="pillar-node"><div class="icon">🛠️</div><div class="name">Repair vs. Replace</div></div>
+        <div class="pillar-node"><div class="icon">🌨️</div><div class="name">Michigan Winter Roofing</div></div>
+        <div class="pillar-node"><div class="icon">⛈️</div><div class="name">Storm Damage &amp; Insurance</div></div>
+        <div class="pillar-node"><div class="icon">🏗️</div><div class="name">Roofing Materials Guide</div></div>
+        <div class="pillar-node"><div class="icon">🔍</div><div class="name">Maintenance &amp; Inspections</div></div>
+      </div>
+    </div>
+    <div class="geo-strip fade-in">
+      <span class="geo-badge">Oak Park</span><span class="geo-badge">Southfield</span><span class="geo-badge">Royal Oak</span><span class="geo-badge">Ferndale</span><span class="geo-badge">Berkley</span><span class="geo-badge">Huntington Woods</span><span class="geo-badge">Pleasant Ridge</span><span class="geo-badge">Clawson</span><span class="geo-badge">Madison Heights</span><span class="geo-badge">Warren</span><span class="geo-badge">Hazel Park</span><span class="geo-badge">Detroit</span>
+    </div>
+    <p class="arch-caption fade-in"><strong>86 total content pieces. ~90,000 words.</strong><br>Zero Metro Detroit roofing companies have built this yet.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 4 — STRATEGY BOARD A: TRUST-FORWARD
+     Inspired by Bone Dry Roofing
+     ═══════════════════════════════════════════════════════ -->
+<section class="strategy-section board-a">
+
+  <div class="board-header fade-in">
+    <span class="board-label">Concept A</span>
+    <h2>The Trust Engine</h2>
+    <p class="board-sub">A homepage that converts strangers into callers by leading with proof. Every element answers the question: "Can I trust these people with my home?"</p>
+    <p class="inspiration">Layout pattern modeled after Bone Dry Roofing — the highest-converting family-focused roofing site in the Midwest.</p>
+  </div>
+
+  <!-- WIREFRAME -->
+  <div class="wireframe-wrap fade-in">
+
+    <!-- Zone 1: Utility bar -->
+    <div class="wf-zone">
+      <div class="wf-zone-bar" style="background: #1a2e4a;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #1a2e4a;">Utility Bar</div>
+        <div class="wf-zone-layout">Location pin + address left · Phone number in gold · "Referral Rewards" · "Insurance" · Red "Get a Free Quote" CTA right</div>
+      </div>
+      <div class="wf-annotation">1</div>
+    </div>
+
+    <!-- Zone 2: Nav -->
+    <div class="wf-zone">
+      <div class="wf-zone-bar" style="background: #e2e8f0;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #64748b;">Navigation</div>
+        <div class="wf-zone-layout">Centered BRUTTELL logo · Split nav links: Services | Locations | About | Specials | Financing | Blog</div>
+      </div>
+      <div class="wf-annotation">2</div>
+    </div>
+
+    <!-- Zone 3: Hero split -->
+    <div class="wf-zone" style="padding: 24px;">
+      <div class="wf-zone-bar" style="background: #d94f2b;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #d94f2b;">Hero — Split Layout</div>
+        <div class="wf-hero-split">
+          <div class="wf-hero-left">
+            <div style="font-size:0.58rem; text-transform:uppercase; letter-spacing:1px; opacity:0.6; margin-bottom:6px;">Roofing Repair &amp; Replacement Services</div>
+            <div class="wf-mini-headline" style="color:#fff;">Keep Your Home<br>Dry and Beautiful</div>
+            <div class="wf-mini-sub">Whether you need a new roof or just have a leak, Bruttell has you covered. 45+ years of award-winning service.</div>
+            <div style="background:#d94f2b; color:#fff; font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; padding:8px 16px; display:inline-block; margin-top:6px;">Family Owned &amp; Locally Operated</div>
+          </div>
+          <div class="wf-hero-right">
+            <div style="font-weight:700; font-size:0.82rem; margin-bottom:2px; color:#1a2e4a;">Let Our Team Earn Your Trust</div>
+            <div style="width:30px; height:2px; background:#c8a84b; margin-bottom:8px;"></div>
+            <div style="font-size:0.68rem; color:#d94f2b; font-weight:600; margin-bottom:8px;">We Offer 24 HR Emergency Service</div>
+            <div class="wf-form-mock">
+              <div class="wf-form-field">First Name</div>
+              <div class="wf-form-field">Last Name</div>
+              <div class="wf-form-field">Phone</div>
+              <div class="wf-form-field">Email</div>
+              <div class="wf-form-field span2">ZIP Code</div>
+              <div class="wf-form-field span2">Choose a Service ▾</div>
+              <div class="wf-form-submit">Get Your Free Estimate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotation">3</div>
+    </div>
+
+    <!-- Zone 4: Trust strip -->
+    <div class="wf-zone">
+      <div class="wf-zone-bar" style="background: #c8a84b;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #c8a84b;">Proof Strip</div>
+        <div class="wf-trust-row">
+          <span class="wf-trust-badge">⭐ 4.9 Stars (Google)</span>
+          <span class="wf-trust-badge">🏆 Contractor of the Year</span>
+          <span class="wf-trust-badge">🛡️ Licensed &amp; Insured</span>
+          <span class="wf-trust-badge">📋 Duro-Last Elite</span>
+          <span class="wf-trust-badge">👨‍👩‍👧 Family Owned · 45 Years</span>
+        </div>
+      </div>
+      <div class="wf-annotation">4</div>
+    </div>
+
+    <!-- Zone 5: Service cards -->
+    <div class="wf-zone" style="padding: 24px;">
+      <div class="wf-zone-bar" style="background: #2563a8;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #2563a8;">Service Cards</div>
+        <div class="wf-svc-row cols-4">
+          <div class="wf-svc-card"><div class="svc-emoji">🏠</div><div class="svc-name">Roof Replacement</div><div class="svc-desc">Complete tear-off + premium materials</div></div>
+          <div class="wf-svc-card"><div class="svc-emoji">🔧</div><div class="svc-name">Roof Repair</div><div class="svc-desc">Fast, reliable leak + storm fixes</div></div>
+          <div class="wf-svc-card"><div class="svc-emoji">⛈️</div><div class="svc-name">Storm Damage</div><div class="svc-desc">Emergency tarp + insurance claims</div></div>
+          <div class="wf-svc-card"><div class="svc-emoji">🔩</div><div class="svc-name">Sheet Metal</div><div class="svc-desc">In-house fabrication + specialty work</div></div>
+        </div>
+      </div>
+      <div class="wf-annotation">5</div>
+    </div>
+
+  </div>
+
+  <!-- ANNOTATION CARDS -->
+  <div class="annotations-grid fade-in">
+    <div class="anno-card">
+      <div class="anno-num">1</div>
+      <div class="anno-body">
+        <h4>Phone Number Never Leaves Sight</h4>
+        <p>Top-right placement, gold color, visible on every page. Click-to-call on mobile. The #1 action roofers need — making a call — should never require scrolling.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> (248) 543-3040 in gold, always visible. Red "Get a Free Quote" CTA beside it creates dual entry points.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">2</div>
+      <div class="anno-body">
+        <h4>Centered Logo = Brand Authority</h4>
+        <p>Bone Dry centers their logo with nav links flanking it. This signals established brand, not a startup. Combined with the "Specials" and "Financing" links, it says: "we're big enough to have programs."</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> Centered "BRUTTELL / Roofing" logo. Blog link in main nav feeds the content engine that powers AI search.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">3</div>
+      <div class="anno-body">
+        <h4>Form Beside the Hero = Instant Conversion</h4>
+        <p>The split hero is Bone Dry's signature. Left side sells the dream. Right side captures the lead. No extra click needed. Roof Maxx (91/100 rubric score) uses the same pattern — proof beside CTA.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> "24 HR Emergency Service" above form. 6-field form with service dropdown routes storm damage leads differently from planned replacements.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">4</div>
+      <div class="anno-body">
+        <h4>Proof Strip = The Trust Shortcut</h4>
+        <p>Every top-performing roofing site puts a proof strip between the hero and the content. It answers objections before they form: "Are they any good? Licensed? Been around?"</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> 45 years, National Contractor of the Year, Duro-Last Elite — no competitor in Metro Detroit can match this trust stack. Gold accent border makes it stand out.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">5</div>
+      <div class="anno-body">
+        <h4>Service Cards = Entry Points for AI</h4>
+        <p>Each card links to a dedicated service page with its own schema, FAQ section, and geo-targeting. These aren't just navigation — they're AI citation magnets. Each one becomes a standalone answer for ChatGPT.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> Sheet Metal card is the differentiator — in-house fabrication that competitors outsource. Flat roof expertise (Duro-Last) gets its own page for the ranch-heavy Oak Park market.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">💡</div>
+      <div class="anno-body">
+        <h4>The "Assignment Selling" Layer</h4>
+        <p>This is what no agency builds. When your estimator heads to a home, they text the homeowner a link: "Here's our guide on what a roof replacement looks like." By the time they arrive, the prospect is pre-educated and the close rate jumps.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> Every cluster article in the 86-piece content strategy doubles as a sales tool. Content doesn't just rank — it sells.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="board-insight fade-in">
+    <div class="board-insight-icon">🏠</div>
+    <p><strong>Why this pattern works for Bruttell:</strong> Oak Park, Berkley, Huntington Woods — these are suburban families making the biggest purchase decision outside their mortgage. They need to feel safe before they call. This layout puts proof on screen before the visitor even processes the headline. The form captures leads who are ready. The content nurtures everyone else.</p>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 5 — STRATEGY BOARD B: GEO-DOMINANT
+     Inspired by Storm Guard Roofing
+     ═══════════════════════════════════════════════════════ -->
+<section class="strategy-section board-b">
+
+  <div class="board-header fade-in">
+    <span class="board-label">Concept B</span>
+    <h2>The Territory Machine</h2>
+    <p class="board-sub">A homepage engineered to own 12 communities in search. Every element is structured so AI systems cite Bruttell when anyone in Metro Detroit asks about roofing.</p>
+    <p class="inspiration">Layout pattern modeled after Storm Guard Roofing — the franchise model that dominates multi-city local search through geo-segmentation.</p>
+  </div>
+
+  <!-- WIREFRAME -->
+  <div class="wireframe-wrap fade-in">
+
+    <!-- Zone 1: Brand bar -->
+    <div class="wf-zone" style="background: #c8a84b12;">
+      <div class="wf-zone-bar" style="background: #c8a84b;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #c8a84b;">Gold Brand Bar</div>
+        <div class="wf-zone-layout">Logo mark left (circle "B" icon + "Bruttell") · Nav links right: About | Services | Service Areas | Resources | Careers</div>
+        <div class="wf-mini">
+          <span class="wf-block gold">B</span>
+          <span class="wf-block navy">Bruttell Roofing</span>
+          <span class="wf-block light">About ▾</span>
+          <span class="wf-block light">Services ▾</span>
+          <span class="wf-block light">Service Areas</span>
+          <span class="wf-block light">Resources ▾</span>
+        </div>
+      </div>
+      <div class="wf-annotation">1</div>
+    </div>
+
+    <!-- Zone 2: Hero full-width -->
+    <div class="wf-zone" style="padding: 24px;">
+      <div class="wf-zone-bar" style="background: #1a2e4a;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #1a2e4a;">Hero — Full Width with ZIP Finder</div>
+        <div class="wf-hero-full geo-bg">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div class="wf-mini-headline" style="color:#fff; font-size:1.2rem;"><span style="color:#d94f2b;">Our</span> Roofing Expertise<br><span style="color:#d94f2b;">Is Your</span> Interior Protection</div>
+              <div class="wf-mini-sub">45+ years protecting Metro Detroit homes. National Contractor of the Year. Duro-Last Elite Certified.</div>
+              <div class="wf-zip-bar">
+                <div class="wf-zip-input">Enter Your ZIP Code</div>
+                <div class="wf-zip-btn">Get Estimate →</div>
+              </div>
+            </div>
+            <div style="width:60px; height:60px; border:2px solid #fff; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-left:16px;">
+              <span style="font-family:'Pacifico', cursive; font-size:1.2rem; font-weight:800; color:#fff;">B</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotation">2</div>
+    </div>
+
+    <!-- Zone 3: Inspection section -->
+    <div class="wf-zone" style="text-align:center;">
+      <div class="wf-zone-bar" style="background: #64748b;"></div>
+      <div class="wf-zone-content" style="text-align:center;">
+        <div class="wf-zone-name" style="color: #64748b;">Inspection &amp; Estimates Section</div>
+        <div style="margin-top:8px;">
+          <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:2px; color:#94a3b8; margin-bottom:4px;">Inspection &amp; Estimates</div>
+          <div style="font-size:0.88rem; font-weight:800; color:#1a2e4a; text-transform:uppercase; max-width:400px; margin:0 auto 6px;">Guiding You Through Restoration With Clarity and Care</div>
+          <div style="width:40px; height:2px; background:#c8a84b; margin:0 auto 6px;"></div>
+          <div style="font-size:0.72rem; color:#64748b; max-width:380px; margin:0 auto;">Our role is to bring knowledge, structure, and peace of mind by helping you make confident decisions every step of the way.</div>
+          <div style="display:inline-block; margin-top:10px; padding:8px 20px; border:1.5px solid #1a2e4a; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#1a2e4a;">Learn More</div>
+        </div>
+      </div>
+      <div class="wf-annotation">3</div>
+    </div>
+
+    <!-- Zone 4: Services visual -->
+    <div class="wf-zone" style="padding: 24px;">
+      <div class="wf-zone-bar" style="background: #c8a84b;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #c8a84b;">Service Categories + Visual</div>
+        <div class="wf-svc-visual-grid">
+          <div style="background:#f0f2f5; border-radius:8px; height:160px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+            <!-- Simple house outline -->
+            <div style="text-align:center; color:#94a3b8;">
+              <div style="font-size:2rem; margin-bottom:4px;">🏠</div>
+              <div style="font-size:0.62rem; font-weight:600;">Architectural Illustration</div>
+              <div style="font-size:0.58rem;">House blueprint with labeled service zones</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div class="wf-block gold" style="padding:12px 16px; border-radius:4px; display:flex; justify-content:space-between; align-items:center;">Roofing <span>→</span></div>
+            <div class="wf-block gold" style="padding:12px 16px; border-radius:4px; display:flex; justify-content:space-between; align-items:center;">Gutters <span>→</span></div>
+            <div class="wf-block gold" style="padding:12px 16px; border-radius:4px; display:flex; justify-content:space-between; align-items:center;">Sheet Metal <span>→</span></div>
+            <div class="wf-block gold" style="padding:12px 16px; border-radius:4px; display:flex; justify-content:space-between; align-items:center;">Flat Roofs <span>→</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotation">4</div>
+    </div>
+
+    <!-- Zone 5: Geo section -->
+    <div class="wf-zone">
+      <div class="wf-zone-bar" style="background: #2563a8;"></div>
+      <div class="wf-zone-content">
+        <div class="wf-zone-name" style="color: #2563a8;">Community Pages Strip</div>
+        <div class="wf-zone-layout">Interactive map or scrolling city cards — each linking to a dedicated 800-1,200 word geo landing page</div>
+        <div class="wf-trust-row">
+          <span class="wf-trust-badge">📍 Oak Park</span>
+          <span class="wf-trust-badge">📍 Southfield</span>
+          <span class="wf-trust-badge">📍 Royal Oak</span>
+          <span class="wf-trust-badge">📍 Ferndale</span>
+          <span class="wf-trust-badge">📍 Berkley</span>
+          <span class="wf-trust-badge">📍 +7 more</span>
+        </div>
+      </div>
+      <div class="wf-annotation">5</div>
+    </div>
+
+  </div>
+
+  <!-- ANNOTATION CARDS -->
+  <div class="annotations-grid fade-in">
+    <div class="anno-card">
+      <div class="anno-num">1</div>
+      <div class="anno-body">
+        <h4>Gold Brand Bar = Instant Recognition</h4>
+        <p>Storm Guard uses a bold yellow bar that burns into memory. It's not decoration — it's a branding system. Every page, every device, the same gold bar signals "you're on the right site."</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> Gold accent already in the brand palette. The circular "B" mark beside the name creates a logo system that works at any size — favicons, social, signage.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">2</div>
+      <div class="anno-body">
+        <h4>ZIP Finder = Geo-Qualified Leads</h4>
+        <p>Instead of a generic "Contact Us" form, Storm Guard routes visitors by ZIP code. This pre-qualifies geography before the first call. It also signals: "We serve YOUR area specifically."</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> ZIP entry routes to the correct geo landing page — "You're in Berkley? Here's your dedicated page with local photos, testimonials from your neighbors, and pricing."</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">3</div>
+      <div class="anno-body">
+        <h4>Education-First Positioning</h4>
+        <p>Storm Guard's "Guiding You Through Restoration" section sells expertise, not services. When AI tools scan for authoritative sources, this structured educational content gets cited — not the sales pitch.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> "Inspection & Estimates" section links into the pillar content. The "Learn More" button feeds visitors into the 86-piece content engine — and every page has FAQPage schema for AI citation.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">4</div>
+      <div class="anno-body">
+        <h4>Service Buttons = Category Pages for AI</h4>
+        <p>Storm Guard's bold yellow service buttons aren't just UI — they create a 1-service, 1-page architecture. Each category page becomes a citation target for "best [service] in [city]" queries.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> "Flat Roofs" button is the competitive weapon — Metro Detroit is ranch-home country, Duro-Last Elite certification is rare, and no competitor owns that keyword locally.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">5</div>
+      <div class="anno-body">
+        <h4>12 Real Geo Pages = 12x the Surface Area</h4>
+        <p>Storm Guard's franchise model creates a separate page for every service × city combination. We replicate this without the franchise overhead — genuine, unique content for each of the 12 target communities.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> "Roofing in Berkley" has real content about Berkley's $97K median income homes, not a city-name swap. Google and AI systems can tell the difference — and so can homeowners.</div>
+      </div>
+    </div>
+    <div class="anno-card">
+      <div class="anno-num">💡</div>
+      <div class="anno-body">
+        <h4>The Invisible Layer: Schema + AI Crawlers</h4>
+        <p>Neither Bone Dry nor Storm Guard has implemented RoofingContractor schema, IndexNow, or AI crawler access. Both of these national brands are visible to Google but invisible to ChatGPT and Perplexity.</p>
+        <div class="bruttell-specific"><strong>Bruttell:</strong> Regardless of which design concept wins, the AI layer gets built. GPTBot, PerplexityBot, ClaudeBot — all whitelisted. Bing Places claimed. IndexNow active. This is where the 3.2x citation advantage lives.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="board-insight fade-in">
+    <div class="board-insight-icon">🎯</div>
+    <p><strong>Why this pattern works for Bruttell:</strong> Warren has 139,000 people. Southfield has 76,000. Madison Heights is all ranch homes needing flat roof expertise. Right now, if someone in any of these cities asks ChatGPT "who should replace my roof?" — Bruttell doesn't exist. This layout, backed by the 86-piece content architecture and full schema implementation, makes Bruttell the answer. Not in 5 years. In 6 months.</p>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6 — WHAT YOU GET
+     ═══════════════════════════════════════════ -->
+<section class="what-you-get">
+  <div class="container">
+    <div class="section-header fade-in" style="margin-bottom: 50px;">
+      <h2>What This Build Includes</h2>
+    </div>
+    <div class="checklist-grid fade-in">
+      <div class="check-item"><span class="check">✓</span><span>Full pillar/cluster content architecture (86 pieces)</span></div>
+      <div class="check-item"><span class="check">✓</span><span>Mobile-first responsive design</span></div>
+      <div class="check-item"><span class="check">✓</span><span>12 geo landing pages (not city-name swaps — real content)</span></div>
+      <div class="check-item"><span class="check">✓</span><span>CRM-integrated lead forms</span></div>
+      <div class="check-item"><span class="check">✓</span><span>RoofingContractor + FAQPage + Service schema on every page</span></div>
+      <div class="check-item"><span class="check">✓</span><span>Google Business Profile optimization guide</span></div>
+      <div class="check-item"><span class="check">✓</span><span>Bing Places optimization + AI crawler access (GPTBot, PerplexityBot)</span></div>
+      <div class="check-item"><span class="check">✓</span><span>IndexNow implementation for instant Bing/ChatGPT indexing</span></div>
+      <div class="check-item"><span class="check">✓</span><span>CallRail call tracking integration</span></div>
+      <div class="check-item"><span class="check">✓</span><span>90-day content publishing calendar</span></div>
+      <div class="check-item"><span class="check">✓</span><span>Speed-optimized (Core Web Vitals target: &lt;2s LCP)</span></div>
+      <div class="check-item"><span class="check">✓</span><span>"Assignment Selling" content kit for the sales team</span></div>
+    </div>
+    <p class="gold-quote fade-in">"The agency charging $20k delivers a brochure.<br>This delivers a search engine."</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 7 — THE QUESTION NOBODY'S ASKING
+     ═══════════════════════════════════════════════════════ -->
+<section class="leads-question">
+  <div class="container">
+    <div class="lq-inner fade-in">
+      <div class="lq-icon">⚠️</div>
+      <h2>But here's the question nobody's asking:</h2>
+      <h3>Where are the leads going?</h3>
+      <p class="lq-body">You build a site that generates leads. Great. But what happens at 7pm on a Tuesday when a homeowner fills out the form? What about Saturday morning after a storm? If that lead sits in an inbox until Monday — you already lost it.</p>
+      <div class="lq-stats-row">
+        <div class="lq-stat">
+          <div class="lq-stat-num">&lt; 60 sec</div>
+          <div class="lq-stat-label">The response window. After 60 seconds, your close rate drops by 80%+.</div>
+        </div>
+        <div class="lq-stat">
+          <div class="lq-stat-num">78%</div>
+          <div class="lq-stat-label">Of homeowners hire the first roofer who responds. Not the best — the fastest.</div>
+        </div>
+        <div class="lq-stat">
+          <div class="lq-stat-num">Nights &amp; Weekends</div>
+          <div class="lq-stat-label">When storm damage leads come in. When nobody's answering the phone.</div>
+        </div>
+      </div>
+      <div class="lq-questions">
+        <p class="lq-q-header">Before you write a $20k check for the website, ask your builder:</p>
+        <div class="lq-q-item"><span class="lq-bullet">→</span> Where do form submissions go? A CRM, or just an email?</div>
+        <div class="lq-q-item"><span class="lq-bullet">→</span> Is there an automated text response that fires within 60 seconds?</div>
+        <div class="lq-q-item"><span class="lq-bullet">→</span> What happens to a lead that comes in at 9pm or on a Sunday?</div>
+        <div class="lq-q-item"><span class="lq-bullet">→</span> Is there call tracking so you know which pages drive phone calls?</div>
+        <div class="lq-q-item"><span class="lq-bullet">→</span> Who's building the follow-up system — or is that "someone else's problem"?</div>
+      </div>
+      <p class="lq-close">A website without a lead response system is a machine that catches fish and drops them back in the water. The site is the front end. The system is what turns traffic into revenue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Bruttell Roofing &amp; Sheet Metal</div>
+    <div class="footer-center">Mockup prepared by <span style="font-family:'Pacifico', cursive;">Rivet</span> Automation Services · Not for distribution</div>
+    <div class="footer-phone">(248) 543-3040</div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
+</script>
+</body>
+</html>
